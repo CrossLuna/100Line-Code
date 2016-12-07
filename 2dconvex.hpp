@@ -20,6 +20,13 @@ struct left_to {
     }
 };
 
+template<typename T>
+std::vector<Point<T>> convex_hull (std::vector<Point<T>>& points) {
+    std::vector<Point<T>> ans;
+    std::sort(points.begin(), points.end(), left_to<Point<T>>());
+    return ans;
+}
+
 } // namespace clg
 
 
